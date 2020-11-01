@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <script>
+            function operation(){
+                 var firstvalue=document.getElementById("aValue").value;
+                var secondvalue=document.getElementById("bValue").value;
+                var type=document.getElementById("dropdpown").value;
+
+                var a;
+
+                if(type=="add"){
+                    a= add(firstvalue,secondvalue);
+                }
+                  if(type=="sub"){
+                    a=sub(firstvalue,secondvalue);
+                }
+                 if(type=="multiply"){
+                    
+                    a=multiply(firstvalue,secondvalue);
+                }
+                 if(type=="divide"){
+                     a=divide(firstvalue,secondvalue);
+                }
+                document.getElementById("result").innerHTML="the result is"+a
+               
+            }
+
+           function add(a,b){
+                var result=parseInt(a)+parseInt(b);
+                return result;
+           }
+
+           function substract(a,b){
+                var result= parseInt(a)-parseInt(b);
+                return result;
+            }
+
+            function divide(a,b){
+            var result= parseInt(a)/parseInt(b);
+                return result;
+            }
+
+            function multiply(a,b){
+                var result= parseInt(a)*parseInt(b);
+                return result;
+            }
+
+            
+
+        </script>
+    </head>
+    <body>
+        <div>
+            <label>a</label>
+            <input type="number" name="aValue" id="aValue">
+        </div>
+        <div>
+            <label>b</label>
+            <input type="number" name="bValue" id="bValue">
+        </div>
+        
+        <select name="dropdown" id="dropdpown" >
+            <option value="add" onclick="addition(a,b)">addition</option>
+            <option value="sub">subraction</option>
+            <option value="multiply">multipication</option>
+            <option value="divide">division</option>
+        </select>
+
+        <button type="button" onclick="operation()">calcuate</button>
+
+        <div id="result"></div>
+    </body>
+</html>

@@ -1,0 +1,373 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script>
+              var students=[]; 
+            function details(){
+                var name=document.getElementById("name").value;  
+                var rollNO=document.getElementById("rollNo").value;  
+
+                var semester1; 
+                var paper1=document.getElementById("teng1").value;
+                var paper2=document.getElementById("maths1").value;
+                var paper3=document.getElementById("enggphy1").value;
+                var paper4=document.getElementById("enggche1").value;
+                var paper5=document.getElementById("compro").value;
+                var paper6=document.getElementById("eg").value;
+                
+                semester1={}
+                semester1.p1=paper1;
+                semester1.p2=paper2;
+                semester1.p3=paper3;
+                semester1.p4=paper4;
+                semester1.p5=paper5;
+                semester1.p6=paper6;
+            
+
+                var semester2;  
+                var paper7=document.getElementById("teng2").value;
+                var paper8=document.getElementById("maths2").value;
+                var paper9=document.getElementById("enggphy2").value;
+                var paper10=document.getElementById("enggche2").value;
+                var paper11=document.getElementById("beee").value;
+                var paper12=document.getElementById("em").value;
+                
+                semester2={}
+                semester2.p7=paper7;
+                semester2.p8=paper8;
+                semester2.p9=paper9;
+                semester2.p10=paper10;
+                semester2.p11=paper11;
+                semester2.p12=paper12;
+
+                var semester3;  
+                var paper13=document.getElementById("maths3").value;
+                var paper14=document.getElementById("som").value;
+                var paper15=document.getElementById("et").value;
+                var paper16=document.getElementById("fmm").value;
+                var paper17=document.getElementById("mtech1").value;
+                var paper18=document.getElementById("edc").value;
+                
+                semester3={}
+                semester3.p13=paper13;
+                semester3.p14=paper14;
+                semester3.p15=paper15;
+                semester3.p16=paper16;
+                semester3.p17=paper17;
+                semester3.p18=paper18;
+
+                var semester4;  
+                var paper19=document.getElementById("maths4").value;
+                var paper20=document.getElementById("kom").value;
+                var paper21=document.getElementById("mtech2").value;
+                var paper22=document.getElementById("emm").value;
+                var paper23=document.getElementById("evs").value;
+                var paper24=document.getElementById("tengg").value;
+                
+                semester4={}
+                semester4.p19=paper19;
+                semester4.p20=paper20;
+                semester4.p21=paper21;
+                semester4.p22=paper22;
+                semester4.p23=paper23;
+                semester4.p24=paper24;
+
+                var semester5;  
+                var paper25=document.getElementById("cad").value;
+                var paper26=document.getElementById("hmt").value;
+                var paper27=document.getElementById("dme").value;
+                var paper28=document.getElementById("mm").value;
+                var paper29=document.getElementById("dom").value;
+                var paper30=document.getElementById("pe").value;
+                
+                semester5={}
+                semester5.p25=paper25;
+                semester5.p26=paper26;
+                semester5.p27=paper27;
+                semester5.p28=paper28;
+                semester5.p29=paper29;
+                semester5.p30=paper30;
+
+                var semester6;  
+                var paper31=document.getElementById("dts").value;
+                var paper32=document.getElementById("pom").value;
+                var paper33=document.getElementById("atengg").value;
+                var paper34=document.getElementById("fea").value;
+                var paper35=document.getElementById("gdjp").value;
+                var paper36=document.getElementById("comskills").value;
+                
+                semester6={}
+                semester6.p31=paper31;
+                semester6.p32=paper32;
+                semester6.p33=paper33;
+                semester6.p34=paper34;
+                semester6.p35=paper35;
+                semester6.p36=paper36;
+
+                semesters={}
+                semesters.sem1=semester1;
+                semesters.sem2=semester2;
+                semesters.sem3=semester3;
+                semesters.sem4=semester4;
+                semesters.sem5=semester5;
+                semesters.sem6=semester6;
+
+                stdetails={}
+                stdetails.username=name;
+                stdetails.userno=rollNO;
+                stdetails.overall=semesters;
+               
+                 students.push(stdetails);
+
+                console.log(stdetails); 
+            }
+
+             function getmarks(){
+                var select=document.getElementById("dropdown").value;
+                var rollNo=document.getElementById("getRollNo").value;
+                var userfound=false;
+                var userNotFound=false;
+
+                for(var i=0;i<students.length; i++){
+                    if(students[i].userno==rollNo){
+                         console.log(students[i].userno);   
+                    }  
+                    if(select=="sem"+i){
+                    console.log(students[i].overall["sem"+i]);
+                }
+             }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <div class="col-md-6">
+                <div>
+                    <label>name:</label>
+                    <input type="text" name="name" id="name">
+                </div>
+
+                <div>
+                    <label>rollNo:</label>
+                    <input type="number" name="rollNo" id="rollNo">
+                </div>
+                    <h1>semester 1:-</h1>
+                <div>
+                    <label>Technical English 1 :</label>
+                    <input type="number" name="english1" id="teng1">
+                </div>
+
+                <div>
+                    <label>Mathematics-1:</label>
+                    <input type="number" name="maths1" id="maths1">
+                </div>
+
+                <div>
+                    <label>Engineering Physics 1:</label>
+                    <input type="number" name="enggphy1" id="enggphy1">
+                </div>
+
+                <div>
+                    <label>Engineering Chemistry 1:</label>
+                    <input type="number" name="enggche1" id="enggche1">
+                </div>
+
+                <div>
+                    <label>Computer Programming:</label>
+                    <input type="number" name="compro" id="compro">
+                </div>
+
+                <div>
+                    <label>Engineering Graphics:</label>
+                    <input type="number" name="eg" id="eg">
+                </div>
+
+
+                <h1>semester 2:-</h1>
+                <div>
+                    <label>Technical English 2 :</label>
+                    <input type="number" name="english2" id="teng2">
+                </div>
+
+                <div>
+                    <label>Mathematics-2:</label>
+                    <input type="number" name="maths2" id="maths2">
+                </div>
+
+                <div>
+                    <label>Engineering Physics 2:</label>
+                    <input type="number" name="enggphy2" id="enggphy2">
+                </div>
+
+                <div>
+                    <label>Engineering Chemistry 2:</label>
+                    <input type="number" name="enggche2" id="enggche2">
+                </div>
+
+                <div>
+                    <label>Basic Electrical and Electronics Engineering:</label>
+                    <input type="number" name="beee" id="beee">
+                </div>
+
+                <div>
+                    <label>Engineering Mechanics:</label>
+                    <input type="number" name="em" id="em">
+                </div>
+
+
+                <h1>semester 3:-</h1>
+                <div>
+                    <label>Transforms and Partial Differential Equations :</label>
+                    <input type="number" name="maths3" id="maths3">
+                </div>
+
+                <div>
+                    <label>Strength of Materials:</label>
+                    <input type="number" name="som" id="som">
+                </div>
+
+                <div>
+                    <label>Engineering Thermodynamics :</label>
+                    <input type="number" name="et" id="et">
+                </div>
+
+                <div>
+                    <label> Fluid Mechanics and Machinery:</label>
+                    <input type="number" name="fmm" id="fmm">
+                </div>
+
+                <div>
+                    <label>Manufacturing Technology - I :</label>
+                    <input type="number" name="mtech1" id="mtech1">
+                </div>
+
+                <div>
+                    <label>Electrical Drives and Controls:</label>
+                    <input type="number" name="edc" id="edc">
+                </div>
+
+
+                <h1>semester 4:-</h1>
+                <div>
+                    <label>Statistics and Numerical Methods:</label>
+                    <input type="number" name="maths4" id="maths4">
+                </div>
+
+                <div>
+                    <label>Kinematics of Machinery:</label>
+                    <input type="number" name="kom" id="kom">
+                </div>
+
+                <div>
+                    <label>Manufacturing Technology 2 :</label>
+                    <input type="number" name="mtech2" id="mtech2">
+                </div>
+
+                <div>
+                    <label> Engineering Materials and Metallurgy:</label>
+                    <input type="number" name="emm" id="emm">
+                </div>
+
+                <div>
+                    <label>Environmental Science and Engineering :</label>
+                    <input type="number" name="evs" id="evs">
+                </div>
+
+                <div>
+                    <label>Thermal Engineering:</label>
+                    <input type="number" name="tengg" id="tengg">
+                </div>
+
+                <h1>semester 5:-</h1>
+                <div>
+                    <label>Computer Aided Design:</label>
+                    <input type="number" name="cad" id="cad">
+                </div>
+
+                <div>
+                    <label>Heat and Mass Transfer:</label>
+                    <input type="number" name="hmt" id="hmt">
+                </div>
+
+                <div>
+                    <label>Design of Machine Elements :</label>
+                    <input type="number" name="dme" id="dme">
+                </div>
+
+                <div>
+                    <label> Metrology and Measurements:</label>
+                    <input type="number" name="mm" id="mm">
+                </div>
+
+                <div>
+                    <label>Dynamics of Machines :</label>
+                    <input type="number" name="dom" id="dom">
+                </div>
+
+                <div>
+                    <label>Professional Ethics in Engineering:</label>
+                    <input type="number" name="pe" id="pe">
+                </div>
+
+                <h1>semester 6:-</h1>
+                <div>
+                    <label>Design of Transmission Systems:</label>
+                    <input type="number" name="dts" id="dts">
+                </div>
+
+                <div>
+                    <label>Principles of Management:</label>
+                    <input type="number" name="pom" id="pom">
+                </div>
+
+                <div>
+                    <label>Automobile Engineering :</label>
+                    <input type="number" name="atengg" id="atengg">
+                </div>
+
+                <div>
+                    <label> Finite Element Analysis:</label>
+                    <input type="number" name="fea" id="fea">
+                </div>
+
+                <div>
+                    <label>Gas Dynamics and Jet Propulsion :</label>
+                    <input type="number" name="gdjp" id="gdjp">
+                </div>
+
+                <div>
+                    <label>Communication Skills:</label>
+                    <input type="number" name="comskills" id="comskills">
+                </div>
+
+               
+                <button type="button" onclick="details()">add marks</button>
+
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <label>rollno</label>
+                    <input type="number" name="getRollNo" id="getRollNo">
+                   
+
+                    <select id="dropdown">
+                        <option value="sem1">semester1</option>
+                        <option value="sem2">semester2</option>
+                        <option value="sem3">semester3</option>
+                        <option value="sem4">semester4</option>
+                        <option value="sem5">semester5</option>
+                        <option value="sem6">semester6</option>
+                    </select>
+
+                    <button type="button" onclick="getmarks()">get</button>
+
+                    <div id="displayMarks"></div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>vfgvc</title>
+<script>
+    function calculate(){
+  var firstValue=document.getElementById("value1").value;
+  var lastValue=document.getElementById("value2").value;
+  var operation=document.getElementById("operation").value;
+  var finalResult; 
+    if(operation=="addition"){
+        finalResult=parseInt(firstValue)+parseInt(lastValue);}
+
+        if(operation=="subraction"){
+        finalResult=parseInt(firstValue)-parseInt(lastValue);}
+
+        if(operation=="mutiplication"){
+        finalResult=parseInt(firstValue)*parseInt(lastValue);}
+
+        if(operation=="division"){
+        finalResult=parseInt(firstValue)/parseInt(lastValue);}
+
+            document.getElementById("result").innerHTML="the result is:" +finalResult;
+}
+</script>
+
+<style>
+    .alignment{
+            margin: 100px;;
+              }
+</style>
+</head>
+<body> 
+   <div>
+       <form class="form-group alignment"> 
+            <div> 
+                <label>first value:</label>
+                <input class="form-control" type="number" id="value1" name="value1">
+            </div>
+
+            <div> 
+                <label>last value:</label>
+                <input class="form-control" type="number" id="value2" name="value2">
+            </div>
+
+            <select id="operation" name="operation">
+                <option value="addition">addition</option>
+                <option value="subraction">subraction</option>
+                <option value="mutiplication">mutiplication</option>
+                <option value="division">division</option>
+            </select>
+
+            <button type="button" onclick="calculate()">submit</button>
+             
+            <h1 id="result" ></h1>
+
+       </form>
+       </div>
+</body>
+</html>

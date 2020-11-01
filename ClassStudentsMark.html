@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script>
+             var students=[];
+            function store(){
+                var name=document.getElementById("name").value;
+                var rollNo=document.getElementById("rollNo").value;
+                var tamilMark=document.getElementById("tamil").value;
+                var englishMark=document.getElementById("english").value;
+                var mathsMark=document.getElementById("maths").value;
+                var scienceMark=document.getElementById("science").value;
+                var socialScienceMark=document.getElementById("socialScience").value;   
+
+                  
+               
+                var details={name:name,rollno:rollNo};
+               
+                var marks= {}
+                marks.tamil=tamilMark;
+                marks.english=englishMark;
+                marks.maths=mathsMark;
+                marks.science=scienceMark;
+                marks.socialScience=socialScienceMark;
+
+                details.studentMarks=marks;
+                console.log(details);
+
+                students.push(details);
+                console.log(students);
+                 }
+
+                 function getmarks(){
+                    var getRollNo=document.getElementById("getRollNo").value;
+                    var matchfound=false;
+                    for(var i=0; i<students.length;i++){
+                       var currentStudent=students[i];
+                     if(currentStudent.rollno==getRollNo){
+                            document.getElementById("displayMarks").innerHTML="Tamil mark is:"+ students[i].studentMarks.tamil + " Enligsh mark is:"+ students[i].studentMarks.english + "Maths mark is:"+students[i].studentMarks.maths+ "Science mark is:"+students[i].studentMarks.science +"Social science mark is:"+students[i].studentMarks.socialScience;
+                              matchfound=true;
+                         }
+                    }
+                    if(matchfound!=true){
+                        alert("the ");
+ 
+                    }
+                  
+
+                 }
+        </script>
+    </head>
+    <body>
+        <form>
+            <div class="col-md-6">
+                <div>
+                    <label>name:</label>
+                    <input type="text" name="name" id="name">
+                </div>
+
+                <div>
+                    <label>rollNo:</label>
+                    <input type="number" name="rollNo" id="rollNo">
+                </div>
+                    <h1>marks:-</h1>
+                <div>
+                    <label>tamil:</label>
+                    <input type="number" name="tamil" id="tamil">
+                </div>
+
+                <div>
+                    <label>english:</label>
+                    <input type="number" name="english" id="english">
+                </div>
+
+                <div>
+                    <label>maths:</label>
+                    <input type="number" name="maths" id="maths">
+                </div>
+
+                <div>
+                    <label>science:</label>
+                    <input type="number" name="science" id="science">
+                </div>
+
+                <div>
+                    <label>socialScience:</label>
+                    <input type="number" name="socialScience" id="socialScience">
+                </div>
+
+                <button type="button" onclick="store()">add marks</button>
+
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <label>rollno</label>
+                    <input type="number" name="getRollNo" id="getRollNo">
+                    <button type="button" onclick="getmarks()">get</button>
+
+                    <div id="displayMarks"></div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script> 
+              
+
+               function addition(a,b){
+                var a=document.getElementById("aValue").value;
+               var b=document.getElementById("bValue").value;
+                var result=parseInt(a)+parseInt(b); 
+                document.getElementById("result").innerHTML="the result is"+result
+              }
+
+           function substract(a,b){
+            var a=document.getElementById("aValue").value;
+               var b=document.getElementById("bValue").value;
+                var result= parseInt(a)-parseInt(b); 
+                document.getElementById("result").innerHTML="the result is"+result
+            }
+
+            function divide(a,b){
+                var a=document.getElementById("aValue").value;
+               var b=document.getElementById("bValue").value;
+            var result= parseInt(a)/parseInt(b); 
+            document.getElementById("result").innerHTML="the result is"+result
+            }
+
+            function multiply(a,b){
+                var a=document.getElementById("aValue").value;
+               var b=document.getElementById("bValue").value;
+                var result= parseInt(a)*parseInt(b); 
+                document.getElementById("result").innerHTML="the result is"+result
+            }
+           
+             
+        </script>
+    </head>
+    <body>
+        <div>
+            <label>a</label>
+            <input type="number" name="aValue" id="aValue">
+        </div>
+        <div>
+            <label>b</label>
+            <input type="number" name="bValue" id="bValue">
+        </div>
+        
+        <select name="dropdown" id="dropdpown" >
+            <option value="add" onclick="addition(a,b)">addition</option>
+            <option value="sub"  onclick="subraction(a,b)">subraction</option>
+            <option value="multiply"  onclick="multiply(a,b)">multipication</option>
+            <option value="divide" onclick="divide(a,b)">division</option>
+        </select>
+
+        <button type="button" onclick="operation()">calcuate</button>
+
+        <div id="result"></div>
+    </body>
+</html>

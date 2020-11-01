@@ -1,0 +1,101 @@
+<html>
+<head> 
+    <title>4G MIFI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function add(){
+        var a,b,c;
+        a= document.getElementById("num1").value; 
+        b= document.getElementById("num2").value; 
+        c= parseInt(a)+ parseInt(b); 
+        document.getElementById("output").innerHTML="My output is " +c;
+        }
+    </script>
+    <style>
+.bg{
+    background-color: red;
+    height: 500px;
+    }
+.align{
+      padding:100px ;
+       }
+
+button{
+        margin-left:150px;
+        margin-top:50px;
+
+       }
+
+.mr{
+    margin:50px;
+    }
+    </style>
+</head>
+<body>
+      <div class="row">
+          <form>
+            <div >
+                <div class="col-md-6">
+                    <div class="bg align" >
+                  <div class="form-group" >
+                   <label class="control-label" for="roll">A:</label>
+                   <input class="form-control" type="number" id="num1" name="roll" value="" placeholder="enter a value" required>
+                  </div> 
+                  <div class="form-group" >
+                      <label class="control-label" for="roll1">B:</label>
+                      <input class="form-control" type="number" id="num2" name="roll1" placeholder="enter a value" required>
+                  </div>
+                  <div><button type="button" class="btn btn-default" onclick="add()" >ADD</button></div>
+                    <div id="output">
+                        <p>My paragra</p>
+                        <b>My \bold tag</b>
+                        <input type="text" />
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </form>
+          <div class="col-md-6 bg"> 
+              <form>
+                <div >
+                    <label class="control-label" for="f1">First name:</label>
+                    <input class="form-control" type="text" id="firstname" name="f1" minlength="4" maxlength="8" required>
+                </div>
+
+                <div >
+                    <label class="control-label" for="f2">Last name:</label>
+                    <input class="form-control" type="text" id="Lastname" name="f2" minlength="4" maxlength="8" required>
+                </div>
+
+                <div >
+                    <label class="control-label" for="f3">Email:</label>
+                    <input class="form-control" type="email" id="eid" name="f3" required>
+                </div>
+
+                <div >
+                    <label class="control-label" for="d1">Ph no:</label>
+                    <input class="form-control" type="number" id="nt" name="d1" required>
+                </div>
+
+                <div >
+                    <label class="control-label" for="f4">Password:</label>
+                    <input class="form-control" type="password" id="pwd" name="f4" required>
+                </div>
+
+                <div >
+                    <label class="control-label" for="f4">Confirm Password:</label>
+                    <input class="form-control" type="password" id="pwd" name="f4" required>
+                </div>
+                    <button class="btn btn-primary">summit</button>
+              </form>
+          </div>
+      </div>
+
+
+                                             
+</body>
+</html>

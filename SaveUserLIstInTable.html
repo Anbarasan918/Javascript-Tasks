@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <style>
+            table ,th ,td{
+                border: 1px solid black;
+                border-collapse:collapse;
+                width:1250px;
+                height:100px;
+            }
+     .myClass{
+
+         background-color: red;
+         color: white;
+     }
+            
+        </style>
+        <script>
+            function generate(){
+                var firstName=document.getElementById("firstname").value;
+                var lastName=document.getElementById("lastname").value;
+                var dateOfBirth=document.getElementById("dob").value;
+                var age=document.getElementById("age").value;
+                var email=document.getElementById("email").value;
+                var phoneNo=document.getElementById("phoneno").value;
+
+                var myDiv = document.getElementById("phoneNoDiv");
+                myDiv.class="myClass";
+                console.log(myDiv);
+
+                var objects={}
+                objects.fN=firstName;
+                objects.lN=lastName;
+                objects.dob=dateOfBirth;
+                objects.age=age;
+                objects.mail=email;
+                objects.no=phoneNo;
+
+                var user=[];
+                user.push(objects);
+                console.log(user);
+
+                var table=document.getElementById("mytable");
+
+                var coloumns=["fN","lN","dob","age","mail","no"]
+
+                for(var i=0;i<user.length;i++){
+                    var row=table.insertRow(-1);
+                    for(var j=0; j<coloumns.length;j++){
+                      var cell=row.insertCell(-1);
+                      cell.innerHTML=user[i][coloumns[j]];
+                      console.log(cell.innerHTML);
+                      }
+                }
+            }
+        </script>
+    </head>
+    <body>
+         <form>
+           <div>firstname<input type="text" name="firstname" id="firstname"></div>
+           <div>lastname<input type="text" name="lastname" id="lastname"></div>
+           <div>dob<input type="date" name="dob" id="dob"></div>
+           <div>age<input type="number" name="age" id="age"></div>
+           <div>email<input type="email" name="email" id="email"></div>
+           <div id="phoneNoDiv" >phoneno<input type="number" name="phoneno" id="phoneno"></div>
+            <button type="button" onclick="generate()">submit</button>
+         </form>
+
+         <table id="mytable">
+             <tr>
+                 <th>firstname</th>
+                 <th>lastname</th>
+                 <th>dob</th>
+                 <th>age</th>
+                 <th>email</th>
+                <th>phone</th>
+             </tr>
+         </table>
+    </body>
+</html>

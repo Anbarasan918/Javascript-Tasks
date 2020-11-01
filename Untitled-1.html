@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>JS</title>
+<script>
+    function set() {
+    var firstName=document.getElementById("firstName").value;
+    var lastName=document.getElementById("lastName").value;
+    var joiningDate=document.getElementById("job").value;
+    var age=document.getElementById("age").value;
+    var email=document.getElementById("email").value;
+    var password=document.getElementById("password").value;
+    var confirmPassword=document.getElementById("confirmPassword").value;
+    var newDate= new Date();
+    var joiningDate = document.getElementById('job').value;
+    var a1= new Date(joiningDate);
+
+    
+    if(firstName==""){
+              alert("pls enter a first name"); 
+              return;
+              }
+
+    if(lastName==""){
+              alert("pls enter a last name");
+              return;
+              }
+    
+    if(joiningDate==""){
+              alert("pls enter a joining date");
+              return;
+              }
+    
+    if(age==""){
+              alert("pls enter a age");
+              return;
+              }
+
+    if(email==""){
+              alert("pls enter a email");
+              return;
+              }
+
+    if(password==""){
+              alert("pls enter a password");
+              return;
+              }
+
+    if(confirmPassword==""){
+              alert("pls enter a confirm password");
+              return;
+              }
+
+    if(password!=confirmPassword){
+            alert("pls check a password and confirm password");
+            return;
+            }
+
+    if(age>=25){
+               alert("your age must be below 25");
+               return;
+               }
+
+     if(a1>newDate){
+                alert("pls enter past date");
+                return;
+                }
+
+                 }
+
+    
+</script>
+
+</head>
+<body> 
+    <form> 
+        <div>
+            <label>firstName:</label>
+            <input type="text" id="firstName" name="firstName">
+        </div>
+
+        <div>
+            <label>lastName:</label>
+            <input type="text" id="lastName" name="lastName">
+        </div>
+
+        <div>
+            <label>joiningDate:</label>
+            <input type="date" id="job" name="job">
+        </div>
+
+        <div>
+            <label>age:</label>
+            <input type="number" id="age" name="age">
+        </div>
+        
+        <div>
+            <label>email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <div>
+            <label>password:</label>
+            <input type="password" id="password"  name="password">
+        </div>
+
+        <div>
+            <label>confirmPassword:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword">
+        </div>
+        <button type="button" onclick="set()">submit</button>
+    </form>
+</body>
+</html>

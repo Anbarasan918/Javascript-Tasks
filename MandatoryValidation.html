@@ -1,0 +1,70 @@
+ <html>
+    <head>
+        <script>
+            function myfunction(){
+                var firstName=document.getElementById("firstname").value;
+                var lastName=document.getElementById("lastName").value;
+                var phoneNo=document.getElementById("phoneNo").value;
+                var email=document.getElementById("email").value;
+                var password=document.getElementById("password").value;
+                var confirmPassword=document.getElementById("confirmPassword").value;
+
+               var errormessage="Please Enter ";
+               var found=false;
+                if(firstName==""){
+                    errormessage= errormessage + " First Name, ";
+                    found=true;
+                }
+                
+                if(firstName.length>=10){
+                    errormessage= errormessage + " First Name with 10 mchar, ";
+                    found=true;
+                }
+                
+                if(lastName==""){
+                    errormessage= errormessage + " last Name, ";
+                    found=true;
+                }
+                if(lastName.length<=6){
+                    errormessage= errormessage + " last Name with 10 mchar,";
+                    found=true;
+                }
+                if(phoneNo.length==""){
+                    errormessage= errormessage + " phone number,";
+                    found=true;
+                }
+                 if(phoneNo.length!=10){
+                    errormessage= errormessage + " phone number with 10 integers,";
+                    found=true;
+
+                }
+                if(email==""){
+                    errormessage= errormessage + " email id,"; 
+                    found=true;
+                } 
+
+                 
+                 if(found==true){
+                alert(errormessage);
+                }else if(found==false){
+                    alert("logged in succesfully");
+                }
+
+            }
+        </script>
+
+       
+    </head>
+    <body>
+        <div>firstName:<input type="text" name="firstName" id="firstname"><div id="alert1"></div></div>
+        <div>lastName:<input type="text" name="lastName" id="lastName"><div id="alert2"></div></div>
+        <div>phoneNo:<input type="number" name="phoneNo" id="phoneNo"><div id="alert3"></div></div>
+        <div>email:<input type="email" name="email" id="email"><div id="alert4"></div></div>
+        <div>password:<input type="password" name="password" id="password"><div id="alert4"></div></div>
+        <div>confirmPassword:<input type="password" name="confirmPassword" id="confirmPassword"><div id="alert5"></div></div>
+        <button type="button" onclick="myfunction()">submit</button><br>
+        <br>
+
+       
+    </body>
+</html>
